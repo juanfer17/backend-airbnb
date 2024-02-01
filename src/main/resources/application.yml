@@ -1,0 +1,26 @@
+application:
+  config:
+    profile: dev_
+    url: 'http://192.168.1.16:8181/airbnbService'
+info:
+  component: airbnbService
+server:
+  servlet:
+    context-path: "/airbnbService"
+  port: 8181
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: juanfer17
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: airbnbService
+  profiles:
+    active: dev
+endpoints:
+  enabled: false
