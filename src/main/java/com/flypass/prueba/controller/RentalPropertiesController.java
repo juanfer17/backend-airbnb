@@ -1,6 +1,6 @@
 package com.flypass.prueba.controller;
 
-import com.flypass.prueba.dto.RequestTransactionCreateDTO;
+import com.flypass.prueba.dto.RequestPropertieCreateDTO;
 import com.flypass.prueba.entity.RentalPropertiesEntity;
 import com.flypass.prueba.general.ApiResponse;
 import com.flypass.prueba.general.Constants;
@@ -23,9 +23,9 @@ public class RentalPropertiesController {
     private RentalPropertiesService rentalPropertiesService;
 
     @PostMapping(Constants.CREATE_PROPERTIE)
-    public ResponseEntity<String> createPropertie(@RequestBody RequestTransactionCreateDTO requestTransactionCreate) {
+    public ResponseEntity<String> createPropertie(@RequestBody RequestPropertieCreateDTO requestPropertieCreate) {
         try {
-            rentalPropertiesService.createPropertie(requestTransactionCreate);
+            rentalPropertiesService.createPropertie(requestPropertieCreate);
             return ResponseEntity.status(HttpStatus.CREATED).body("La solicitud fue exitosa.");
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurrió un error al realizar la solicitud.", e);

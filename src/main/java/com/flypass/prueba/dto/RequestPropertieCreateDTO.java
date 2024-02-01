@@ -9,7 +9,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class RequestTransactionCreateDTO {
+public class RequestPropertieCreateDTO {
     @NotBlank(message = "El nombre no puede estar vacío")
     private String name;
 
