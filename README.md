@@ -9,4 +9,4 @@ createPropertie: Crea una nueva propiedad y hace validaciones para poder guardar
 
 filteringProperties: Filtra las propiedades que cumplan con un rango de precio.
 
-Colection de Postman: [https://www.postman.com/cryosat-participant-586089/workspace/parkingflypass](https://crimson-meadow-340957.postman.co/workspace/My-Workspace~c8ef17bf-4a2c-4f0d-84a7-37dccd4db47f/collection/29419340-8da74bd5-f483-4b11-9ab4-b74094137513?action=share&creator=29419340)https://crimson-meadow-340957.postman.co/workspace/My-Workspace~c8ef17bf-4a2c-4f0d-84a7-37dccd4db47f/collection/29419340-8da74bd5-f483-4b11-9ab4-b74094137513?action=share&creator=29419340
+Colection de Postman: https://crimson-meadow-340957.postman.co/workspace/My-Workspace~c8ef17bf-4a2c-4f0d-84a7-37dccd4db47f/collection/29419340-8da74bd5-f483-4b11-9ab4-b74094137513?action=share&creator=29419340
