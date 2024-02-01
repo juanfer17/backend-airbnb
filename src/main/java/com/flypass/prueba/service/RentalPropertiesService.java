@@ -8,6 +8,9 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 @Service
 public class RentalPropertiesService {
 
@@ -43,4 +46,14 @@ public class RentalPropertiesService {
             throw new IllegalArgumentException("Ya existe una propiedad registrada con el mismo nombre");
         }
     }
+
+    public List<RentalPropertiesEntity> filterPropertiesByAvailabilityAndPrice(BigDecimal minPrice, BigDecimal maxPrice) {
+        try {
+            return rentalPropertiesRepository.findByAvailabilityIsTrueAndPriceBetween(minPrice, maxPrice);
+        } catch (Exception e) {
+            throw new RuntimeException("Ocurrió un error al realizar la solicitud", e);
+        }
+    }
+
+
 }
