@@ -6,7 +6,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "rentalProperties")
+@Table(name = "rentalproperties")
 @Data
 public class RentalPropertiesEntity {
     @Id

@@ -24,9 +24,9 @@ public class RentalPropertiesController {
     public ResponseEntity<String> createPropertie(@RequestBody RequestTransactionCreateDTO requestTransactionCreate) {
         try {
             rentalPropertiesService.createPropertie(requestTransactionCreate);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Propiedad creada exitosamente.");
+            return ResponseEntity.status(HttpStatus.CREATED).body("La solicitud fue exitosa.");
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Fallo al crear transaccion.", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurrió un error al realizar la solicitud.", e);
         }
     }
 }
