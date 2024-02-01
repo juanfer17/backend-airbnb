@@ -32,7 +32,7 @@ public class RentalPropertiesController {
         }
     }
     @GetMapping(Constants.FILTER_PROPERTIES)
-    public ResponseEntity<?> filterProperties(@RequestParam BigDecimal minPrice,   @RequestParam BigDecimal maxPrice) {
+    public ResponseEntity<?> filterProperties(@RequestParam BigDecimal minPrice,@RequestParam BigDecimal maxPrice) {
         try {
             List<RentalPropertiesEntity> filteredProperties = rentalPropertiesService
                     .filterPropertiesByAvailabilityAndPrice(minPrice, maxPrice);
