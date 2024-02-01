@@ -16,6 +16,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(Constants.ROOT_ENDPOINT + "/" )
 public class RentalPropertiesController {
 
@@ -32,10 +33,9 @@ public class RentalPropertiesController {
         }
     }
     @GetMapping(Constants.FILTER_PROPERTIES)
-    public ResponseEntity<?> filterProperties(@RequestParam BigDecimal minPrice,@RequestParam BigDecimal maxPrice) {
+    public ResponseEntity<?> filterProperties(@RequestParam Integer minPrice,@RequestParam Integer maxPrice) {
         try {
-            List<RentalPropertiesEntity> filteredProperties = rentalPropertiesService
-                    .filterPropertiesByAvailabilityAndPrice(minPrice, maxPrice);
+            List<RentalPropertiesEntity> filteredProperties = rentalPropertiesService.filterPropertiesByAvailabilityAndPrice(minPrice, maxPrice);
             return ResponseEntity.ok(new ApiResponse("La solicitud fue exitosa", filteredProperties));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

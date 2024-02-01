@@ -46,9 +46,9 @@ public class RentalPropertiesService {
         }
     }
 
-    public List<RentalPropertiesEntity> filterPropertiesByAvailabilityAndPrice(BigDecimal minPrice, BigDecimal maxPrice) {
+    public List<RentalPropertiesEntity> filterPropertiesByAvailabilityAndPrice(Integer minPrice, Integer maxPrice) {
         try {
-            return rentalPropertiesRepository.findByAvailabilityIsTrueAndPriceBetween(minPrice, maxPrice);
+            return rentalPropertiesRepository.findByAvailabilityIsTrueAndPriceBetween(BigDecimal.valueOf(minPrice),BigDecimal.valueOf(maxPrice));
         } catch (Exception e) {
             throw new RuntimeException("Ocurrió un error al realizar la solicitud", e);
         }
