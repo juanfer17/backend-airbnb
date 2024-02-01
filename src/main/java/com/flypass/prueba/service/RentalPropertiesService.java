@@ -11,8 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class RentalPropertiesService {
 
-    @Autowired
-    private RentalPropertiesRepository rentalPropertiesRepository;
+
+    private final  RentalPropertiesRepository rentalPropertiesRepository;
+
+    public RentalPropertiesService(RentalPropertiesRepository rentalPropertiesRepository) {
+        this.rentalPropertiesRepository = rentalPropertiesRepository;
+    }
 
     @Valid
     public void createPropertie(RequestTransactionCreateDTO requestTransactionCreateDTO) {
